@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -15,7 +15,7 @@ export class MovieService {
 
   getTopRatedMovies(page: number = 1) {
     return this.http.get(
-      `${BASE_URL}/movies/popular?page=${page}&api_key=${API_KEY}`
+      `${BASE_URL}/movie/popular?language=en-US&page=${page}&api_key=${API_KEY}`
     );
   }
 
